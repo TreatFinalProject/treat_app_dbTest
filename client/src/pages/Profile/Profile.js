@@ -26,10 +26,18 @@ class Profile extends React.Component {
   // Loads all books  and sets them to this.state.books
   loadEvents = () => {
     API.getEvents()
-      .then(res => this.setState({ events: res.data, eventName: "", eventHost: "", location: "", date: "" })
+      .then(res => 
+        this.setState({ events: res.data, eventName: "", eventHost: "", location: "", date: "" })
       )
       .catch(err => console.log(err));
   };
+
+  // Deletes a book from the database with a given id, then reloads books from the db
+  deleteEvent = id => {
+    API.deleteEvent(id)
+      .then(res => this.loadEvents())
+      .catch(err => console.log(err));
+    };
 
 
   // Handles updating component state when the user types into the input field
@@ -65,7 +73,7 @@ class Profile extends React.Component {
   render() {
     console.log(this.state.events)
 
-    
+
     return (
       <Container fluid>
         <Row>
@@ -124,7 +132,7 @@ class Profile extends React.Component {
                           {event.eventName} hosted by {event.eventHost}
                         </strong>
                       </a>
-                      {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
+                      <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
                     </ListItem>
                   );
                 })}
