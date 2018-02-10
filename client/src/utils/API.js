@@ -37,4 +37,21 @@ export default {
     return axios.get("/api/todo/" + id);
   },
 
+// GUEST API ROUTES
+  // Gets all guests
+  getGuests: function () {
+    return axios.get("/api/guests");
+  },
+  // Saves a guest to the database
+  saveGuest: function (todoData) {
+    return axios.post("/api/guests", todoData);
+  },
+  // Deletes the guest with the given id
+  deleteGuest: function (id) {
+   return axios.delete("/api/guests/" + id);
+    },
+  // Gets the guest with the given id
+  getGuest: function (id) {
+    return axios.get("/api/guests/" + id);
+  }
 };
