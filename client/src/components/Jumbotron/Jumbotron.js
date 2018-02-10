@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import "./Jumbotron.css";
 
 class Jumbotron extends React.Component {
 
   render () {
 
     return (
-      <div style={{ height: 300, clear: 'both' }} className="jumbotron">
+      <div style={{ padding: 15}} className="jumbotron text-center">
         {this.props.children}
       </div>
       );

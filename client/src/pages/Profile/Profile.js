@@ -8,6 +8,7 @@ import Col from "../../components/Col";
 import Container from "../../components/Container";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import "./Profile.css";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -75,8 +76,8 @@ class Profile extends React.Component {
 
   render() {
 
-    const img = require('../../assets/img/Group.jpg');
-    const addImg = require('../../assets/img/Add.jpg');
+    const profileImg = require('../../assets/img/profile.jpg');
+   
 
     console.log(this.state.events)
 
@@ -84,29 +85,37 @@ class Profile extends React.Component {
     return (
       <div>
         &nbsp;
-      <h2 className="text-center">Hello, User!</h2>
+      <h2 className="text-center">Hello, Kelly!</h2>
+      
+      <h2 className="text-center">Welcome Back!</h2>
         &nbsp;
       <Container fluid>
           <Row>
             <Col size="md-3">
             </Col>
             <Col size="md-6">
-              <div className="card">
-                <div className="card-body">
-                  <h3>Best Friend: </h3>
-                  <h3>Location:</h3>
+               
+                <Row>
+                  <Col size="sm-12">
+                    <div className="card">
+                    <img src={profileImg} width="100" height="100"/>
+                      <div className="card-body">
+                        <h3>Best Friend: </h3>
+                        <h3>Location:</h3>
 
-                </div>
-              </div>
-            </Col>
-            <Col size="md-3">
-            </Col>
+                      </div>
+                    </div>
+                  </Col>
+                  </Row>
+              </Col>
+              <Col size="md-3">
+              </Col>
           </Row>
           &nbsp;
         <Row>
             <Col size="md-6">
               <Jumbotron>
-                <h1>Plan an Event</h1>
+                <h2>Plan an Event</h2>
               </Jumbotron>
               <form>
                 <Input
@@ -147,7 +156,7 @@ class Profile extends React.Component {
             </Col>
             <Col size="md-6 sm-12">
               <Jumbotron>
-                <h1>Upcoming Events</h1>
+                <h2>Upcoming Events</h2>
               </Jumbotron>
               {this.state.events.length ? (
                 <List>
