@@ -53,7 +53,7 @@ class Profile extends React.Component {
     });
   };
 
-  // Then reload books from the database
+  // Then reload events from the database
   handleSubmit = event => {
     event.preventDefault();
     // console.log('button worked')
