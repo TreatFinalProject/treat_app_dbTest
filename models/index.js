@@ -1,3 +1,5 @@
 module.exports = {
-  Event: require("./event")
+  Event: require("./event"),
+  Todo: require("./todo"),
+  Guest: require("./guest")
 };

@@ -28,9 +28,48 @@ const eventSeed = [
   }
 ];
 
+const guestSeed = [
+  {
+    firstName: "Kelly",
+    lastName: "Quinn",
+    email: "kellyquinn213@gmail.com",
+    RSVP: ""
+  }
+];
+
+const todoSeed = [
+  {
+    todoItem: "Send out invites"
+  }
+];
+
 db.Event
   .remove({})
   .then(() => db.Event.collection.insertMany(eventSeed))
+  .then(data => {
+    console.log(data.insertedIds.length + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+db.Guest
+  .remove({})
+  .then(() => db.Guest.collection.insertMany(guestSeed))
+  .then(data => {
+    console.log(data.insertedIds.length + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+db.Todo
+  .remove({})
+  .then(() => db.Todo.collection.insertMany(todoSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
