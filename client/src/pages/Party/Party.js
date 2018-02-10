@@ -6,8 +6,8 @@ import Col from "../../components/Col";
 import Images from "../../components/Images";
 import Todo from "./Todo";
 import GuestList from "./GuestList";
-import Rsvp from "./Rsvp";
-import Inspiration from "./Inspiration";
+// import Rsvp from "./Rsvp";
+// import Inspiration from "./Inspiration";
 
 
 class Party extends React.Component {
@@ -27,8 +27,8 @@ class Party extends React.Component {
                             <ul className="list-group list-group-flush">
                                 <a href="/party/todo" className="list-group-item list-group-item-action">To Do</a>
                                 <a href="/party/guestlist" className="list-group-item list-group-item-action">Guest List</a>
-                                <a href="/party/rsvp" className="list-group-item list-group-item-action">RSVP</a>
-                                <a href="/party/inspiration" className="list-group-item list-group-item-action">Inspiration</a>
+                                {/* <a href="/party/rsvp" className="list-group-item list-group-item-action">RSVP</a> */}
+                                {/* <a href="/party/inspiration" className="list-group-item list-group-item-action">Inspiration</a> */}
                             </ul>
                         </Col>
                         {/* Event Column */}
@@ -50,8 +50,8 @@ class Party extends React.Component {
                             <Row>
                                 <Route exact path={`/party/todo`} component={Todo} />
                                 <Route exact path={`/party/guestlist`} component={GuestList} />
-                                <Route exact path={`/party/rsvp`} component={Rsvp} />
-                                <Route exact path={`/party/inspiration`} component={Inspiration} />
+                                {/* <Route exact path={`/party/rsvp`} component={Rsvp} /> */}
+                                {/* <Route exact path={`/party/inspiration`} component={Inspiration} /> */}
                             </Row>
                         </Col>
                     </Row>
