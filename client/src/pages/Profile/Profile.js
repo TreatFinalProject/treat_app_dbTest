@@ -9,6 +9,8 @@ import Container from "../../components/Container";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
+import withAuthorization from '../../components/Session/withAuthorization';
+
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -174,4 +176,5 @@ class Profile extends React.Component {
     );
   }
 }
+const authCondition = (authUser) => !!authUser;
 export default Profile;
