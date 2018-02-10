@@ -2,7 +2,10 @@ import React from "react";
 import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
+// import { Col, Row, Container } from "../../components/Grid";
+import Row from "../../components/Row";
+import Col from "../../components/Col";
+import Container from "../../components/Container";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
