@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteBtn from "../../components/DeleteBtn";
+import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
@@ -54,7 +55,7 @@ class Todo extends React.Component {
         todos: [],
         todoItem: this.state.todoItem,
       })
-        .then(res => this.loadEvents())
+        .then(res => this.loadTodos())
         .catch(err => console.log(err));
     }
   };
@@ -65,9 +66,9 @@ class Todo extends React.Component {
         <Container fluid>
           <Row>
             <Col size="md-4">
-              {/* <Jumbotron> */}
-              <h1>Add a Todo</h1>
-              {/* </Jumbotron> */}
+              <Jumbotron>
+                <h2>Add a Todo</h2>
+              </Jumbotron>
               <form>
                 <Input
                   value={this.state.todoItem}
@@ -84,7 +85,10 @@ class Todo extends React.Component {
               </form>
             </Col>
             <Col size="md-8 sm-12">
-              <h1>To Do List</h1>
+              <Jumbotron>
+                <h2>To Do List</h2>
+              </Jumbotron>
+
               {this.state.todos.length ? (
                 <List>
                   {this.state.todos.map(todo => {
