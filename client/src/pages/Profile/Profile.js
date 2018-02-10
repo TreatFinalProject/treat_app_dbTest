@@ -29,7 +29,7 @@ class Profile extends React.Component {
   // Loads all books  and sets them to this.state.books
   loadEvents = () => {
     API.getEvents()
-      .then(res => 
+      .then(res =>
         this.setState({ events: res.data, eventName: "", eventHost: "", location: "", date: "" })
       )
       .catch(err => console.log(err));
@@ -40,7 +40,7 @@ class Profile extends React.Component {
     API.deleteEvent(id)
       .then(res => this.loadEvents())
       .catch(err => console.log(err));
-    };
+  };
 
 
   // Handles updating component state when the user types into the input field
@@ -74,78 +74,103 @@ class Profile extends React.Component {
   };
 
   render() {
+
+    const img = require('../../assets/img/Group.jpg');
+    const addImg = require('../../assets/img/Add.jpg');
+
     console.log(this.state.events)
 
 
     return (
+      <div>
+        &nbsp;
+      <h2 className="text-center">Hello, User!</h2>
+        &nbsp;
       <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Event Should I Plan?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.eventName}
-                onChange={this.handleChange}
-                name="eventName"
-                placeholder="Event Name (required)"
-                type="text"
-              />
-              <Input
-                value={this.state.eventHost}
-                onChange={this.handleChange}
-                name="eventHost"
-                placeholder="Host (required)"
-                type="text"
-              />
-              <Input
-                value={this.state.location}
-                onChange={this.handleChange}
-                name="location"
-                placeholder="Location(required)"
-                type="text"
+          <Row>
+            <Col size="md-3">
+            </Col>
+            <Col size="md-6">
+              <div className="card">
+                <div className="card-body">
+                  <h3>Best Friend: </h3>
+                  <h3>Location:</h3>
 
-              />
-              <Input
-                value={this.state.date}
-                onChange={this.handleChange}
-                name="date"
-                placeholder="Event Date(required)"
-                type="text"
-              />
-              <FormBtn
-                onClick={this.handleSubmit}
-              >
-                Submit Event
+                </div>
+              </div>
+            </Col>
+            <Col size="md-3">
+            </Col>
+          </Row>
+          &nbsp;
+        <Row>
+            <Col size="md-6">
+              <Jumbotron>
+                <h1>Plan an Event</h1>
+              </Jumbotron>
+              <form>
+                <Input
+                  value={this.state.eventName}
+                  onChange={this.handleChange}
+                  name="eventName"
+                  placeholder="Event Name (required)"
+                  type="text"
+                />
+                <Input
+                  value={this.state.eventHost}
+                  onChange={this.handleChange}
+                  name="eventHost"
+                  placeholder="Host (required)"
+                  type="text"
+                />
+                <Input
+                  value={this.state.location}
+                  onChange={this.handleChange}
+                  name="location"
+                  placeholder="Location(required)"
+                  type="text"
+
+                />
+                <Input
+                  value={this.state.date}
+                  onChange={this.handleChange}
+                  name="date"
+                  placeholder="Event Date(required)"
+                  type="text"
+                />
+                <FormBtn
+                  onClick={this.handleSubmit}
+                >
+                  Submit Event
               </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Upcoming Events</h1>
-            </Jumbotron>
-            {this.state.events.length ? (
-              <List>
-                {this.state.events.map(event => {
-                  return (
-                    <ListItem key={event._id}>
-                      <a href={"/events/" + event._id}>
-                        <strong>
-                          {event.eventName} hosted by {event.eventHost}
-                        </strong>
-                      </a>
-                      <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
-                    </ListItem>
-                  );
-                })}
-              </List>
-            ) : (
-                <h3>No Results to Display</h3>
-              )}
-          </Col>
-        </Row>
-      </Container>
+              </form>
+            </Col>
+            <Col size="md-6 sm-12">
+              <Jumbotron>
+                <h1>Upcoming Events</h1>
+              </Jumbotron>
+              {this.state.events.length ? (
+                <List>
+                  {this.state.events.map(event => {
+                    return (
+                      <ListItem key={event._id}>
+                        <a href={"/events/" + event._id}>
+                          <strong>
+                            {event.eventName} hosted by {event.eventHost}
+                          </strong>
+                        </a>
+                        <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              ) : (
+                  <h3>No Results to Display</h3>
+                )}
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
