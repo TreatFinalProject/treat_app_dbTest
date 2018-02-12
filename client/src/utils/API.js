@@ -3,8 +3,8 @@ import axios from "axios";
 export default {
 // EVENT API ROUTES
   // Gets all events
-  getEvents: function () {
-    return axios.get("/api/events");
+  getEvents: function (email) {
+    return axios.get("/api/events/" + email);
   },
   // Saves an event to the database
   saveEvent: function (eventData) {

@@ -4,9 +4,10 @@ const db = require("../models");
 
 // EVENT FUNCTIONS
 const eventFunctions = {
-  findAll: function (req, res) {
+  findByUser: function (req, res) {
     db.Event
-      .find(req.query)
+      .find(req.params.user)
+      .where("email").equals(req.params.email)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -93,7 +94,7 @@ const guestFunctions = {
 }
 
 // EVENT ROUTES
-router.get("/api/events", eventFunctions.findAll)
+router.get("/api/events/:email", eventFunctions.findByUser)
 
 router.post("/api/events", eventFunctions.create)
 

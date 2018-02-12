@@ -165,7 +165,7 @@ class Home extends React.Component {
                              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Every one of your buddy’s birthdays should be 7x as 
                              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;celebrated!</p>
                              <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12"/> &ensp;Because a party where sniffing butts is totally ok rules!</p>
-                                        <a href="#" class="btn btn-success btn-sm">Go somewhere</a>
+                                        <a href="#" className="btn btn-success btn-sm">Go somewhere</a>
                             </div>
                        
                     </Col>

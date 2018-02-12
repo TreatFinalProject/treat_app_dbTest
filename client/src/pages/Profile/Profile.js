@@ -9,34 +9,40 @@ import Container from "../../components/Container";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import "./Profile.css";
-
+import { firebase } from '../../firebase';
 import withAuthorization from '../../components/Session/withAuthorization';
 
 class Profile extends React.Component {
-  constructor(props) {
+  constructor(props, { authUser }) {
     super(props);
     this.state = {
       events: [],
       eventName: "",
       eventHost: "",
       date: "",
-      location: ""
+      location: "",
+      email: "",
+      unique:[]
     };
   }
 
-  // When the component mounts, load all books and save them to this.state.books
   componentDidMount() {
-    this.loadEvents();
+    firebase.auth.onAuthStateChanged(authUser => {
+      this.setState({"email": authUser.email})
+      this.loadEvents();
+
+    })
   }
 
   // Loads all books  and sets them to this.state.books
-  loadEvents = () => {
-    API.getEvents()
+  loadEvents = user => {
+    API.getEvents(this.state.email)
       .then(res =>
         this.setState({ events: res.data, eventName: "", eventHost: "", location: "", date: "" })
       )
       .catch(err => console.log(err));
-  };
+  
+};
 
   // Deletes a book from the database with a given id, then reloads books from the db
   deleteEvent = id => {
@@ -62,6 +68,7 @@ class Profile extends React.Component {
     // console.log('button worked')
     // console.log(this.state)
     if (this.state.eventName && this.state.location && this.state.eventHost) {
+      this.state.unique.push(event.email);
       // console.log('if statement worked!!')
       // console.log(this.state)
       API.saveEvent({
@@ -69,7 +76,9 @@ class Profile extends React.Component {
         eventName: this.state.eventName,
         eventHost: this.state.eventHost,
         location: this.state.location,
-        date: this.state.date
+        date: this.state.date,
+        email: this.state.email,
+        unique: []
       })
         .then(res => this.loadEvents())
         .catch(err => console.log(err));
@@ -81,13 +90,13 @@ class Profile extends React.Component {
     const profileImg = require('../../assets/img/profile.jpg');
    
 
-    console.log(this.state.events)
+    // console.log(this.state.events)
 
 
     return (
       <div>
         &nbsp;
-      <h2 className="text-center">Hello, Kelly!</h2>
+      <h2 className="text-center">Hello, {this.state.email}</h2>
       
       <h2 className="text-center">Welcome Back!</h2>
         &nbsp;
@@ -148,6 +157,15 @@ class Profile extends React.Component {
                   name="date"
                   placeholder="Event Date(required)"
                   type="text"
+                />
+
+                <Input
+                value={this.state.email}
+                  onChange={this.handleChange}
+                  name="email"
+                  placeholder="email(required)"
+                  type="text"
+
                 />
                 <FormBtn
                   onClick={this.handleSubmit}
