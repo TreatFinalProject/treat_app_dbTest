@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Party from "./pages/Party/Party";
 import Profile from "./pages/Profile/Profile";
+import Todo from "./pages/Party/Todo";
+import GuestList from "./pages/Party/GuestList";
 // import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -24,7 +26,10 @@ const App = () =>
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/profile" component={Profile} />
-        {<Route path="/party" component={Party} />}
+        <Route exact path="/party/:id" component={Party} />
+        {/* <Route exact path="/party/:id/todo" component={Todo} /> */}
+        {/* <Route exact path="/party/:id/guestlist" component={GuestList} /> */}
+        {/* <Route path="/party" component={Party} /> */}
         <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
         <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
         <Route exact path={routes.SIGN_IN} component={() => <SignInPage />} />

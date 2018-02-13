@@ -37,7 +37,7 @@ class Profile extends React.Component {
       )
       .catch(err => console.log(err));
   };
-
+   
   // Deletes a book from the database with a given id, then reloads books from the db
   deleteEvent = id => {
     API.deleteEvent(id)
@@ -77,6 +77,7 @@ class Profile extends React.Component {
   };
 
   render() {
+    
 
     const profileImg = require('../../assets/img/profile.jpg');
    
@@ -165,7 +166,7 @@ class Profile extends React.Component {
                   {this.state.events.map(event => {
                     return (
                       <ListItem key={event._id}>
-                        <a href={"/events/" + event._id}>
+                        <a href={"/party/" + event._id}>
                           <strong>
                             {event.eventName} hosted by {event.eventHost}
                           </strong>
