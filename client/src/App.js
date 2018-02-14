@@ -18,7 +18,7 @@ import withAuthentication from './components/Session/withAuthentication';
 const App = () =>
   <Router>
     <div>
-      {/* <Navbar /> */}
+      
       <Navigation />
       <Wrapper>
         <Route exact path="/" component={Home} />
