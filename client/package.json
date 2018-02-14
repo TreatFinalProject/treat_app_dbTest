@@ -8,7 +8,6 @@
     "bootstrap": "^4.0.0-alpha.6",
     "cloudinary-react": "^1.0.6",
     "firebase": "^4.9.1",
-    "lodash.clonedeep": "^4.5.0",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
