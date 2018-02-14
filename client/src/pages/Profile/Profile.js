@@ -122,7 +122,7 @@ class Profile extends React.Component {
         </div>
       
       
-      <a href="/"><h3 className="text-center">&ensp;&ensp;Kelly Q </h3></a>
+        <a href="/">&ensp;&ensp;<h3 className="text-center">Kelly Q </h3></a>
       <h5 className="text-center">&ensp;&ensp;&ensp;View Upcoming Events</h5>
       
       

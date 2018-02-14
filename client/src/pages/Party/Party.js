@@ -6,15 +6,38 @@ import Col from "../../components/Col";
 import Images from "../../components/Images";
 import Todo from "./Todo";
 import GuestList from "./GuestList";
+import API from "../../utils/API";
 // import Rsvp from "./Rsvp";
 // import Inspiration from "./Inspiration";
 
 
 class Party extends React.Component {
-
     constructor(props) {
         super(props);
+        this.state = {
+           event: {}
+          };
     }
+
+    // When this component mounts, grab the event with the _id of this.props.match.params.id
+  componentDidMount() {
+    API.getEvent(this.props.match.params.id)
+      .then(res => this.setState({ event: res.data }))
+      .catch(err => console.log(err));
+  }
+
+    componentWillMount() {
+        this.loadEvents();
+      }
+    
+      // Loads all books  and sets them to this.state.books
+      loadEvents = () => {
+        API.getEvents()
+          .then(res =>
+            this.setState({ events: res.data })
+          )
+          .catch(err => console.log(err));
+      };
 
     render() {
         const profileImg = require('../../assets/img/cat.jpg');
