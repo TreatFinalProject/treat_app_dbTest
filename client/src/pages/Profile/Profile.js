@@ -2,12 +2,11 @@ import React from "react";
 import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
-// import { Col, Row, Container } from "../../components/Grid";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 import Container from "../../components/Container";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, FormBtn } from "../../components/Form";
 import "./Profile.css";
 import { firebase } from '../../firebase';
 import withAuthorization from '../../components/Session/withAuthorization';
@@ -112,12 +111,12 @@ class Profile extends React.Component {
       <Col size="md-3">
       
        
-        <div classNme="profilePic">
+        <div className="profilePic">
         <Row>
             <Col size="md-4">
             </Col>
             <Col size="md-4">
-                <img src={profilePic} width="90" height="110"/>
+                <img src={profilePic} width="90" height="110" alt="profilePicture"/>
             </Col>
             <Col size="md-4">
             </Col>
@@ -139,7 +138,7 @@ class Profile extends React.Component {
                   <Row>
                     <Col size="md-4">
                        
-                        <img src={profileImg} width="180" height="180"/>
+                        <img src={profileImg} width="180" height="180" alt="profileImage"/>
                        
                     </Col>
                     <Col size="md-8">

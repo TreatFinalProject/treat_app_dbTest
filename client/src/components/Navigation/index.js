@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "./Nav.css";
 import "../../assets/css/style.css";
-import Row from "../Row";
+// import Row from "../Row";
 
 
 
 
 import SignOutButton from '../SignOut';
-import * as routes from '../../constants/routes';
+// import * as routes from '../../constants/routes';
 
 const logoImg = require('../../assets/img/logo.svg');
 
@@ -20,7 +20,7 @@ const Navigation = (props, { authUser }) =>
     <div className="container-fluid">
       <div className="navbar-header">
         
-        <a href="/"><img src={logoImg} width="180" height="70"/></a>
+        <a href="/"><img src={logoImg} width="180" height="70" alt="logoPic"/></a>
         
       </div>
     { authUser
