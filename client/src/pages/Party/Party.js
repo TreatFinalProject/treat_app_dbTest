@@ -8,8 +8,9 @@ import Todo from "./Todo";
 import Jumbotron from "../../components/Jumbotron"
 import GuestList from "./GuestList";
 import API from "../../utils/API";
-
 import { List, ListItem } from "../../components/List";
+import { firebase } from '../../firebase';
+import withAuthorization from '../../components/Session/withAuthorization';
 
 // import Rsvp from "./Rsvp";
 // import Inspiration from "./Inspiration";
@@ -17,33 +18,36 @@ import { List, ListItem } from "../../components/List";
 
 class Party extends React.Component {
 
-    constructor(props) {
+    constructor(props, { authUser }) {
         super(props);
         this.state = {
             events: [],
-            event: {}
+            event: {},
+            email: "",
+            unique:[]
         };
     }
 
-// When this component mounts, grab the event with the _id of this.props.match.params.id
-  componentDidMount() {
-    API.getEvent(this.props.match.params.id)
-      .then(res => this.setState({ event: res.data }))
-      .catch(err => console.log(err));
-  }
-
-    componentWillMount() {
-        this.loadEvents();
+    componentDidMount() {
+        firebase.auth.onAuthStateChanged(authUser => {
+          this.setState({"email": authUser.email})
+          this.loadEvents();
+        })
       }
     
       // Loads all books  and sets them to this.state.books
-      loadEvents = () => {
-        API.getEvents()
-          .then(res =>
-            this.setState({ events: res.data })
-          )
-          .catch(err => console.log(err));
-      };
+      loadEvents = user => {
+        API.getEvents(this.state.email)
+          .then(res =>this.setState({ events: res.data}))
+          .catch(err => console.log(err));  
+    };
+
+// When this component mounts, grab the event with the _id of this.props.match.params.id
+  componentwillMount() {
+    API.getEvent(this.props.match.params.id)
+      .then(res => this.setState({ event: res.data }))
+      .catch(err => console.log(err));
+  };
 
     render() {
     
