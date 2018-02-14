@@ -1,6 +1,6 @@
 import React from 'react';
-import Row from "../Row";
-import Col from "../Col";
+// import Row from "../Row";
+// import Col from "../Col";
 
 
 const Img = props => (

@@ -5,22 +5,27 @@ import Row from "../../components/Row";
 import Col from "../../components/Col";
 import Images from "../../components/Images";
 import Todo from "./Todo";
+import Jumbotron from "../../components/Jumbotron"
 import GuestList from "./GuestList";
 import API from "../../utils/API";
+
+import { List, ListItem } from "../../components/List";
 
 // import Rsvp from "./Rsvp";
 // import Inspiration from "./Inspiration";
 
 
 class Party extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
-           event: {}
-          };
+            events: [],
+            event: {}
+        };
     }
 
-    // When this component mounts, grab the event with the _id of this.props.match.params.id
+// When this component mounts, grab the event with the _id of this.props.match.params.id
   componentDidMount() {
     API.getEvent(this.props.match.params.id)
       .then(res => this.setState({ event: res.data }))
@@ -40,57 +45,54 @@ class Party extends React.Component {
           .catch(err => console.log(err));
       };
 
-
     render() {
-        const profileImg = require('../../assets/img/cat.jpg');
-
+    
         return (
+        
             <div>
                 <Container style={{ marginTop: 30 }}>
-                &nbsp;
                     <Row>
                         {/* Dash Column */}
-                        
-                        <Col size="md-3">
+                        {/* <Col size="md-3">
                             <h1 className="text-left">Dashboard</h1>
                             <ul className="list-group list-group-flush">
                                 <a href="/party/todo" className="list-group-item list-group-item-action">To Do</a>
                                 <a href="/party/guestlist" className="list-group-item list-group-item-action">Guest List</a>
-                                {/* <a href="/party/rsvp" className="list-group-item list-group-item-action">RSVP</a> */}
-                                {/* <a href="/party/inspiration" className="list-group-item list-group-item-action">Inspiration</a> */}
                             </ul>
-                        </Col>
+                        </Col> */}
                         {/* Event Column */}
-                        <Col size="md-9">
+                        <Col size="md-12">
+                        <Jumbotron>
                             <h1 className="text-center">{this.state.event.eventName}</h1>
+                            </Jumbotron>
                             {/* Info Row */}
-                            <div className="card">
-                        <Row>
-                       
-                          <Col size="md-4">
-                             
-                              <img src={profileImg} width="190" height="190"/>
-                             
-                          </Col>
-                          <Col size="md-8">
-                              <div className="card-body">
-                              &nbsp;
-                                <h4>&nbsp;&nbsp;Best Friend: &ensp;Ginger </h4>
-                                <h4>&nbsp;&nbsp;Birthdate: &ensp;02/17/2015</h4>
-                                <h4>&nbsp;&nbsp;Location: &ensp;Hoboken, NJ</h4>
-
-                              </div>
-                          </Col>
-                        </Row>
-                      </div>
-
-                            {/* Changing Dash Component Row */}
                             <Row>
-                                <Route exact path={`/party/todo`} component={Todo} />
-                                <Route exact path={`/party/guestlist`} component={GuestList} />
-                                {/* <Route exact path={`/party/rsvp`} component={Rsvp} /> */}
-                                {/* <Route exact path={`/party/inspiration`} component={Inspiration} /> */}
+                            <Col size="md-3">
+                                    <Images />
+                                    <div className="petPic"></div>
+                                </Col>
+                                <Col size="md-9">
+                                    <h2> Date: {this.state.event.date}</h2>
+                                    <h2> Location: {this.state.event.location}</h2>
+                                    <h2> Host: {this.state.event.eventHost}</h2>
+                                </Col>
+                                
                             </Row>
+                            {/* <Row>
+                                <Col size="md-5">
+                                    {Todo}
+                                </Col>
+                            
+                                <Col size="md-5">
+                                    {GuestList}
+                                </Col>
+                            </Row> */}
+                            
+                            {/* Changing Dash Component Row */}
+                            {/* <Row>
+                                <Route exact path={"/party/todo"} component={Todo} />
+                                <Route exact path={`/party/guestlist`} component={GuestList} />
+                            </Row> */}
                         </Col>
                     </Row>
                 </Container>

@@ -1,11 +1,11 @@
 import React from "react";
-import Pet from "../../components/Pet";
+// import Pet from "../../components/Pet";
 import Container from "../../components/Container";
 import ContainerTwo from "../../components/ContainerTwo";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 import "./Home.css";
-import Request from 'superagent';
+// import Request from 'superagent';
 import ImgList from "../../components/ImgList";
 import axios from 'axios';
 
@@ -55,11 +55,11 @@ class Home extends React.Component {
         return (
             <div>
                 <div className="text">
-                <img src={petMain} width="100%" height="100%"/>
+                <img src={petMain} width="100%" height="100%" alt="picDog"/>
                 <h1 className="titleNameOne"> Your-All-In-One</h1>
                 <h1 className="titleNameTwo"> Event Planner
                 <Row>
-                <button className="btn btn-success btn-lg round">Get Started</button>
+                <a href="/signup" className="btn btn-success btn-lg round">Get Started</a>
                 </Row>
                 </h1>
                 </div>
@@ -84,7 +84,7 @@ class Home extends React.Component {
                             <Col size="md-1">
                                 </Col>
                                 <Col size="md-2">
-                                    <img src={RSVPimg} width="50" height="35"/>
+                                    <img src={RSVPimg} width="50" height="35" alt="picDog"/>
                                 </Col>
                                 <Col size="md-7">
                                     <h6 className="strong text-left"> R S V P</h6>
@@ -105,7 +105,7 @@ class Home extends React.Component {
                                 <Col size="md-1">
                                 </Col>
                                 <Col size="md-2">
-                                    <img src={GuestImg} width="50" height="40"/>
+                                    <img src={GuestImg} width="50" height="40" alt="picDog"/>
                                 </Col>
                                 <Col size="md-9">
                                     <h6 className="strong text-left"> Guest List</h6>
@@ -121,7 +121,7 @@ class Home extends React.Component {
                             <Col size="md-1">
                                 </Col>
                                 <Col size="md-2">
-                                    <img src={toDoimg} width="55" height="40"/>   
+                                    <img src={toDoimg} width="55" height="40" alt="picDog"/>   
                                 </Col>
                                 <Col size="md-9">
                                     <h6 className="strong text-left"> To Do List</h6>
@@ -138,7 +138,7 @@ class Home extends React.Component {
                             <Col size="md-1">
                                 </Col>
                                 <Col size="md-2">
-                                    <img src={giftimg} width="50" height="35"/> 
+                                    <img src={giftimg} width="50" height="35" alt="picDog"/> 
                                 </Col>
                                 <Col size="md-9">
                                     <h6 className="strong text-left"> Gift</h6>
@@ -155,17 +155,17 @@ class Home extends React.Component {
                         <div className="card">
                             <div className="card-header text-center">
                                 
-                            <img src={light} width="15" height="20"/>&ensp;  The 4 Reasons to Throw Your Dog a Birthday Party
+                            <img src={light} width="15" height="20" alt="picDog"/>&ensp;  The 4 Reasons to Throw Your Dog a Birthday Party
                             </div>
                             &nbsp;
                             
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12"/> &ensp;Because your best friend deserves a celebration!</p>
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12"/> &ensp;Doggy playdates are good for both you and your pet! </p>
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12"/> &ensp;Because one dog year is equivalent to 7 human years. 
+                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Because your best friend deserves a celebration!</p>
+                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Doggy playdates are good for both you and your pet! </p>
+                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Because one dog year is equivalent to 7 human years. 
                              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Every one of your buddy’s birthdays should be 7x as 
                              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;celebrated!</p>
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12"/> &ensp;Because a party where sniffing butts is totally ok rules!</p>
-                                        <a href="#" className="btn btn-success btn-sm">Go somewhere</a>
+                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Because a party where sniffing butts is totally ok rules!</p>
+                                        <a href="/signup" className="btn btn-success btn-sm">Start Planning Today!</a>
                             </div>
                        
                     </Col>
