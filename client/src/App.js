@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Party from "./pages/Party/Party";
 import Profile from "./pages/Profile/Profile";
-// import Navbar from "./components/Navbar";
+import Todo from "./pages/Party/Todo";
+import GuestList from "./pages/Party/GuestList";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import Navigation from './components/Navigation';
@@ -25,6 +26,8 @@ const App = () =>
         <Route exact path="/home" component={Home} />
         <Route exact path="/profile" component={Profile} />
         <Route path="/events/:id" component={Party} />
+        <Route exact path={`/party/todo`} component={Todo} />
+        <Route exact path={`/party/guestlist`} component={GuestList} />
         <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
         <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
         <Route exact path={routes.SIGN_IN} component={() => <SignInPage />} />
