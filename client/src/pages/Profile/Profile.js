@@ -87,7 +87,8 @@ class Profile extends React.Component {
 
   render() {
 
-    const profileImg = require('../../assets/img/profile.jpg');
+    const profileImg = require('../../assets/img/cat.jpg');
+    const profilePic = require('../../assets/img/kelly.jpg');
    
 
     // console.log(this.state.events)
@@ -98,82 +99,125 @@ class Profile extends React.Component {
         &nbsp;
       <h2 className="text-center">Hello, {this.state.email}</h2>
       
-      <h2 className="text-center">Welcome Back!</h2>
+      <h3 className="text-center">Welcome Back!</h3>
         &nbsp;
       <Container fluid>
-          <Row>
-            <Col size="md-3">
-            </Col>
-            <Col size="md-6">
-               
-                <Row>
-                  <Col size="sm-12">
-                    <div className="card">
-                    <img src={profileImg} width="100" height="100"/>
-                      <div className="card-body">
-                        <h3>Best Friend: </h3>
-                        <h3>Location:</h3>
+      <Row>
+      <Col size="md-1">
+      </Col>
 
-                      </div>
-                    </div>
-                  </Col>
-                  </Row>
-              </Col>
-              <Col size="md-3">
-              </Col>
-          </Row>
-          &nbsp;
+      <Col size="md-3">
+      
+       
+        <div classNme="profilePic">
         <Row>
-            <Col size="md-6">
+            <Col size="md-4">
+            </Col>
+            <Col size="md-4">
+                <img src={profilePic} width="90" height="110"/>
+            </Col>
+            <Col size="md-4">
+            </Col>
+        </Row>
+        </div>
+      
+      
+      <a href="/"><h3 className="text-center">&ensp;&ensp;Kelly Q </h3></a>
+      <h5 className="text-center">&ensp;&ensp;&ensp;View Upcoming Events</h5>
+      
+      
+      </Col>
+     
+         
+          
+      <Col size="md-7">
+              
+                <div className="card">
+                  <Row>
+                    <Col size="md-4">
+                       
+                        <img src={profileImg} width="180" height="180"/>
+                       
+                    </Col>
+                    <Col size="md-8">
+                        <div className="card-body">
+                        &nbsp;
+                          <h4>&nbsp;&nbsp;Best Friend: &ensp;Ginger </h4>
+                          <h4>&nbsp;&nbsp;Birthdate: &ensp;02/17/2015</h4>
+                          <h4>&nbsp;&nbsp;Location: &ensp;Hoboken, NJ</h4>
+
+                        </div>
+                    </Col>
+                  </Row>
+                </div>
+            
+             
+            </Col>
+       
+        <Col size="md-1">
+        </Col>
+    </Row>
+    &nbsp;
+    <Row>
+    <Col size="md-2">
+    </Col>
+    <Col size="md-8">
               <Jumbotron>
                 <h2>Plan an Event</h2>
               </Jumbotron>
               <form>
+                Event Name
                 <Input
                   value={this.state.eventName}
                   onChange={this.handleChange}
                   name="eventName"
-                  placeholder="Event Name (required)"
+                  placeholder="Event Name"
                   type="text"
                 />
+                Host
                 <Input
                   value={this.state.eventHost}
                   onChange={this.handleChange}
                   name="eventHost"
-                  placeholder="Host (required)"
+                  placeholder="Host"
                   type="text"
                 />
+                Location
                 <Input
                   value={this.state.location}
                   onChange={this.handleChange}
                   name="location"
-                  placeholder="Location(required)"
+                  placeholder="Location"
                   type="text"
 
                 />
+                Event Date
                 <Input
                   value={this.state.date}
                   onChange={this.handleChange}
                   name="date"
-                  placeholder="Event Date(required)"
+                  placeholder="Event Date"
                   type="text"
                 />
-
+                Email
                 <Input
                 value={this.state.email}
                   onChange={this.handleChange}
                   name="email"
-                  placeholder="email(required)"
+                  placeholder="email"
                   type="text"
 
                 />
                 <FormBtn
                   onClick={this.handleSubmit}
                 >
-                  Submit Event
+                  Save
               </FormBtn>
               </form>
+              </Col>
+            <Col size="md-2">
             </Col>
+
             <Col size="md-6 sm-12">
               <Jumbotron>
                 <h2>Upcoming Events</h2>

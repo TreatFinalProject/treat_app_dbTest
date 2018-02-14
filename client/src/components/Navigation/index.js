@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import "./Nav.css";
-import "../../assets/css/style.css"
+import "../../assets/css/style.css";
+import Row from "../Row";
+
+
 
 
 import SignOutButton from '../SignOut';
@@ -12,7 +15,7 @@ const logoImg = require('../../assets/img/logo.svg');
 
 const Navigation = (props, { authUser }) =>
 
-  <div>
+  
   <nav className="navbar navbar-default navbar-static-top">
     <div className="container-fluid">
       <div className="navbar-header">
@@ -27,24 +30,44 @@ const Navigation = (props, { authUser }) =>
     </div>
     
     </nav>;
-  </div>
+  
 
 Navigation.contextTypes = {
   authUser: PropTypes.object,
 };
 
 const NavigationAuth = () =>
-  <ul>
-    <li><Link to={routes.HOME}>Home Page</Link></li>
-    <li><Link to={routes.PARTY}>User Page</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><SignOutButton /></li>
+
+ 
+  <ul className="nav navbar-nav navbar-right js-anonymous-header">
+  
+    <li><a href="/">Home</a>
+   
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/profile">Profile</a>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/account">Account</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <SignOutButton /></li>
+  
+
   </ul>
+  
+
 
 const NavigationNonAuth = () =>
-  <ul>
-    <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+
+  
+  <ul className="nav navbar-nav navbar-right js-anonymous-header">
+  
+    <li><a href="/">Home</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/signin">Sign In</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/signup">Sign Up</a></li>
+    
   </ul>
+
 
 export default Navigation;

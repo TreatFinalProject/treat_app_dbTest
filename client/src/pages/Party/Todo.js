@@ -62,10 +62,11 @@ class Todo extends React.Component {
 
   render() {
     return (
-      <div>
+     
         <Container fluid>
           <Row>
-            <Col size="md-4">
+            <Col size="md-6">
+            &nbsp;
               <Jumbotron>
                 <h2>Add a Todo</h2>
               </Jumbotron>
@@ -84,7 +85,8 @@ class Todo extends React.Component {
 
               </form>
             </Col>
-            <Col size="md-8 sm-12">
+            <Col size="sm-6">
+            &nbsp;
               <Jumbotron>
                 <h2>To Do List</h2>
               </Jumbotron>
@@ -110,7 +112,7 @@ class Todo extends React.Component {
             </Col>
           </Row>
         </Container>
-      </div>
+      
     );
   }
 }
