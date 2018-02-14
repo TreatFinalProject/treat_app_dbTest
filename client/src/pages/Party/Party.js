@@ -6,17 +6,46 @@ import Col from "../../components/Col";
 import Images from "../../components/Images";
 import Todo from "./Todo";
 import GuestList from "./GuestList";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
+
+
+
 // import Rsvp from "./Rsvp";
 // import Inspiration from "./Inspiration";
 
 
 class Party extends React.Component {
-
     constructor(props) {
         super(props);
+        this.state = {
+           event: {}
+          };
     }
 
-    render() {
+    // When this component mounts, grab the event with the _id of this.props.match.params.id
+  componentDidMount() {
+    API.getEvent(this.props.match.params.id)
+      .then(res => this.setState({ event: res.data }))
+      .catch(err => console.log(err));
+  }
+
+    componentWillMount() {
+        this.loadEvents();
+      }
+    
+      // Loads all books  and sets them to this.state.books
+      loadEvents = () => {
+        API.getEvents()
+          .then(res =>
+            this.setState({ events: res.data })
+          )
+          .catch(err => console.log(err));
+      };
+
+
+     
+      render() {
         return (
             <div>
                 <Container style={{ marginTop: 30 }}>
@@ -33,11 +62,11 @@ class Party extends React.Component {
                         </Col>
                         {/* Event Column */}
                         <Col size="md-9">
-                            <h1 className="text-center">Event Name</h1>
+                            <h1 className="text-center">{this.state.event.eventName}</h1>
                             {/* Info Row */}
                             <Row>
                                 <Col size="md-5">
-                                <h2> Date: </h2>
+                                <h2> Date: {this.state.event.date}</h2>
                                 <h2> Location: </h2>
                                 <h2> Host: </h2>
                                 </Col>

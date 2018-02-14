@@ -15,6 +15,7 @@ const eventFunctions = {
   findById: function (req, res) {
     db.Event
       .findById(req.params.id)
+      // .where("id").equals(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 },
@@ -95,7 +96,7 @@ const guestFunctions = {
 
 // EVENT ROUTES
 router.get("/api/events/:email", eventFunctions.findByUser)
-
+ 
 router.post("/api/events", eventFunctions.create)
 
 router.delete("/api/events/:id", eventFunctions.remove)

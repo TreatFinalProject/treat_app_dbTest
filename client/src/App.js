@@ -24,7 +24,7 @@ const App = () =>
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/profile" component={Profile} />
-        {<Route path="/party" component={Party} />}
+        <Route path="/events/:id" component={Party} />}
         <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
         <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
         <Route exact path={routes.SIGN_IN} component={() => <SignInPage />} />
