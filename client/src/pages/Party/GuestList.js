@@ -67,13 +67,14 @@ class GuestList extends React.Component {
 
   render() {
     return (
-      <div>
+      
         <Container fluid>
 
           <Row>
-            <Col size="md-6">
+          <Col size="md-6">
+            &nbsp;
               <Jumbotron>
-                <h2>Plan an Event</h2>
+                <h2>Add Guests</h2>
               </Jumbotron>
               <form>
                 <Input
@@ -101,11 +102,12 @@ class GuestList extends React.Component {
                 <FormBtn
                   onClick={this.handleSubmit}
                 >
-                  Add a guest
+                  Add 
             </FormBtn>
               </form>
             </Col>
-            <Col size="md-6 sm-12">
+            <Col size="md-6">
+            &nbsp;
               <Jumbotron>
                 <h2>Guest List</h2>
               </Jumbotron>
@@ -130,7 +132,7 @@ class GuestList extends React.Component {
             </Col>
           </Row>
         </Container>
-      </div>
+     
     );
   }
 }

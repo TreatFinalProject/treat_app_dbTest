@@ -7,9 +7,6 @@ import Images from "../../components/Images";
 import Todo from "./Todo";
 import GuestList from "./GuestList";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
-
-
 
 // import Rsvp from "./Rsvp";
 // import Inspiration from "./Inspiration";
@@ -44,13 +41,16 @@ class Party extends React.Component {
       };
 
 
-     
-      render() {
+    render() {
+        const profileImg = require('../../assets/img/cat.jpg');
+
         return (
             <div>
                 <Container style={{ marginTop: 30 }}>
+                &nbsp;
                     <Row>
                         {/* Dash Column */}
+                        
                         <Col size="md-3">
                             <h1 className="text-left">Dashboard</h1>
                             <ul className="list-group list-group-flush">
@@ -64,17 +64,26 @@ class Party extends React.Component {
                         <Col size="md-9">
                             <h1 className="text-center">{this.state.event.eventName}</h1>
                             {/* Info Row */}
-                            <Row>
-                                <Col size="md-5">
-                                <h2> Date: {this.state.event.date}</h2>
-                                <h2> Location: </h2>
-                                <h2> Host: </h2>
-                                </Col>
-                                <Col size="md-7">
-                                <Images />
-                                <div className="petPic"></div>
-                                </Col>
-                            </Row>
+                            <div className="card">
+                        <Row>
+                       
+                          <Col size="md-4">
+                             
+                              <img src={profileImg} width="190" height="190"/>
+                             
+                          </Col>
+                          <Col size="md-8">
+                              <div className="card-body">
+                              &nbsp;
+                                <h4>&nbsp;&nbsp;Best Friend: &ensp;Ginger </h4>
+                                <h4>&nbsp;&nbsp;Birthdate: &ensp;02/17/2015</h4>
+                                <h4>&nbsp;&nbsp;Location: &ensp;Hoboken, NJ</h4>
+
+                              </div>
+                          </Col>
+                        </Row>
+                      </div>
+
                             {/* Changing Dash Component Row */}
                             <Row>
                                 <Route exact path={`/party/todo`} component={Todo} />
