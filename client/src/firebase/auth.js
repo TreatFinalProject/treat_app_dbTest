@@ -2,8 +2,10 @@ import { auth } from './firebase';
 
 // Sign Up
 export const doCreateUserWithEmailAndPassword = (email, password) =>
-  auth.createUserWithEmailAndPassword(email, password);
-
+  auth.createUserWithEmailAndPassword(email, password).then(function(){
+    window.location.href="/profile"
+  });
+  
 // Sign In
 export const doSignInWithEmailAndPassword = (email, password) =>
   auth.signInWithEmailAndPassword(email, password);
@@ -13,6 +15,9 @@ export const doSignOut = () =>
   auth.signOut().then(function(){
     window.location.href="/"
   });
+
+  
+
 
 // Password Reset
 

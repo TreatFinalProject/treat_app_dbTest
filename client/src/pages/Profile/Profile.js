@@ -30,18 +30,15 @@ class Profile extends React.Component {
     firebase.auth.onAuthStateChanged(authUser => {
       this.setState({"email": authUser.email})
       this.loadEvents();
-
     })
   }
 
+  
   // Loads all books  and sets them to this.state.books
   loadEvents = user => {
     API.getEvents(this.state.email)
-      .then(res =>
-        this.setState({ events: res.data, eventName: "", eventHost: "", location: "", date: "" })
-      )
-      .catch(err => console.log(err));
-  
+      .then(res =>this.setState({ events: res.data}))
+      .catch(err => console.log(err));  
 };
 
   // Deletes a book from the database with a given id, then reloads books from the db
@@ -91,13 +88,19 @@ class Profile extends React.Component {
     const profilePic = require('../../assets/img/kelly.jpg');
    
 
-    // console.log(this.state.events)
+    let title = "Hello"
 
+    if (this.state.events.length>0) {
+      title = title + ", " + this.state.events[0].eventHost
+    }
 
     return (
       <div>
         &nbsp;
-      <h2 className="text-center">Hello, {this.state.email}</h2>
+  
+      <h2 className="text-center">{title}</h2>
+
+
       
       <h3 className="text-center">Welcome Back!</h3>
         &nbsp;

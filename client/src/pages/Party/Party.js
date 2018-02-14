@@ -7,6 +7,7 @@ import Images from "../../components/Images";
 import Todo from "./Todo";
 import GuestList from "./GuestList";
 import API from "../../utils/API";
+
 // import Rsvp from "./Rsvp";
 // import Inspiration from "./Inspiration";
 
@@ -39,8 +40,10 @@ class Party extends React.Component {
           .catch(err => console.log(err));
       };
 
+
     render() {
         const profileImg = require('../../assets/img/cat.jpg');
+
         return (
             <div>
                 <Container style={{ marginTop: 30 }}>
@@ -59,7 +62,7 @@ class Party extends React.Component {
                         </Col>
                         {/* Event Column */}
                         <Col size="md-9">
-                            <h1 className="text-center">Event Name</h1>
+                            <h1 className="text-center">{this.state.event.eventName}</h1>
                             {/* Info Row */}
                             <div className="card">
                         <Row>
@@ -80,6 +83,7 @@ class Party extends React.Component {
                           </Col>
                         </Row>
                       </div>
+
                             {/* Changing Dash Component Row */}
                             <Row>
                                 <Route exact path={`/party/todo`} component={Todo} />

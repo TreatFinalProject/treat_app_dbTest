@@ -38,7 +38,6 @@ Navigation.contextTypes = {
 
 const NavigationAuth = () =>
 
- 
   <ul className="nav navbar-nav navbar-right js-anonymous-header">
   
     <li><a href="/">Home</a>
@@ -51,7 +50,6 @@ const NavigationAuth = () =>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <SignOutButton /></li>
   
-
   </ul>
   
 
