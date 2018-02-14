@@ -12,10 +12,6 @@ import { List, ListItem } from "../../components/List";
 import { firebase } from '../../firebase';
 import withAuthorization from '../../components/Session/withAuthorization';
 
-// import Rsvp from "./Rsvp";
-// import Inspiration from "./Inspiration";
-
-
 class Party extends React.Component {
 
     constructor(props, { authUser }) {
@@ -102,21 +98,12 @@ class Party extends React.Component {
                                 </Col>
 
                             </Row>
-                            {/* <Row>
-                                <Col size="md-5">
-                                    {Todo}
-                                </Col>
-                            
-                                <Col size="md-5">
-                                    {GuestList}
-                                </Col>
-                            </Row> */}
 
                             {/* Changing Dash Component Row */}
-                            {/* <Row>
-                                <Route exact path={"/party/todo"} component={Todo} />
+                            <Row>
+                                <Route exact path={`/party/todo`} component={Todo} />
                                 <Route exact path={`/party/guestlist`} component={GuestList} />
-                            </Row> */}
+                            </Row>
                         </Col>
                     </Row>
                 </Container>
