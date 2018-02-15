@@ -86,32 +86,62 @@ class SignInForm extends Component {
       password === '' ||
       email === '';
 
+      const gmail = require('../../assets/img/mail.png');
+      const passwordImg = require('../../assets/img/password.png');
+
     return (
       
         
         <form onSubmit={this.onSubmit}>
-       
+         &nbsp;
+       <Row>
+        <Col size="md-1">
+        </Col>
+        <Col size="md-2">
+        
+        <img src={gmail} width="29" height="29" alt="github"/>
+        </Col>
+        <Col size="md-8">
          
-            Email
+         
             <Input
-              value={email}
+            value={email}
             onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
             type="text"
-            placeholder="Email Address"
+            placeholder="Email Adreess"
+            
             />
+            </Col>
+        <Col size="md-1">
+        </Col>
+      </Row>
+
          
      
-        &nbsp;
-        Password
+       
+        <Row>
+        <Col size="md-1">
+        </Col>
+        <Col size="md-2">
+        
+        <img src={passwordImg} width="29" height="29" alt="github"/>
+        </Col>
+        <Col size="md-8">
+        
+       
         <Input
           value={password}
           onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
           type="password"
           placeholder="Password"
         />
+        </Col>
+        <Col size="md-1">
+        </Col>
+      </Row>
        
         
-        <button disabled={isInvalid} type="submit">
+        <button className="btn btn-info btn-xs round" disabled={isInvalid} type="submit">
           Sign In
         </button>
 

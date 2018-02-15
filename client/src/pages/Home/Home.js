@@ -59,7 +59,7 @@ class Home extends React.Component {
                 <h1 className="titleNameOne"> Your-All-In-One</h1>
                 <h1 className="titleNameTwo"> Event Planner
                 <Row>
-                <a href="/signup" className="btn btn-success btn-lg round">Get Started</a>
+                <a href="/signup" className="btn btn-info btn-lg round">Get Started</a>
                 </Row>
                 </h1>
                 </div>
@@ -220,7 +220,7 @@ class Home extends React.Component {
                                             <Col size="sm-3">
                                             </Col>
                                             <Col size="sm-3">
-                                                <a href="/signup" className="btn btn-success btn-xs round">Start Today</a>
+                                                <a href="/signup" className="btn btn-info btn-xs round">Start Today</a>
                                             </Col>
                                             <Col size="sm-6">
                                             </Col>

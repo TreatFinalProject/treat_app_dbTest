@@ -1,13 +1,33 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import Row from "../Row";
+import Col from "../Col";
+import { Input, FormBtn } from "../Form";
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import "./index.css";
 
 const PasswordForgetPage = () =>
-  <div>
-    <h1>PasswordForget</h1>
+<div>
+&nbsp;
+
+<Row>
+<Col size="sm-3">
+</Col>
+<Col size="sm-6">
+<div className="card">
+<div className="card-body">
+  <div className="text-center">
+    &nbsp;
+    <h1>Reset Your Password</h1>
     <PasswordForgetForm />
+  </div>
+  </div>
+  </div>
+  </Col>
+  <Col size="sm-3">
+</Col>
+</Row>
   </div>
 
 const updateByPropertyName = (propertyName, value) => () => ({
@@ -48,19 +68,40 @@ class PasswordForgetForm extends Component {
 
     const isInvalid = email === '';
 
+    const passwordImg = require('../../assets/img/password.png');
+
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+      &nbsp;
+       <Row>
+        <Col size="md-1">
+        </Col>
+        <Col size="md-2">
+        
+        <img src={passwordImg} width="29" height="29" alt="github"/>
+        </Col>
+        <Col size="md-8">
+        
+            <Input
+        
           value={this.state.email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
+        </Col>
+        <Col size="md-1">
+        </Col>
+        </Row>
+        
+        
+                    <button className="btn btn-info btn-xs round" disabled={isInvalid} type="submit">
+                      Reset My Password
+                    </button>
+  
 
-        { error && <p>{error.message}</p> }
+              { error && <p>{error.message}</p> }
+           
       </form>
     );
   }
