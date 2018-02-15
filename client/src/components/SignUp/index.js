@@ -3,15 +3,35 @@ import {
   Link,
   withRouter,
 } from 'react-router-dom';
+import Row from "../Row";
+import Col from "../Col";
 
 import { auth, db } from '../../firebase';
 import * as routes from '../../constants/routes';
+import { Input, FormBtn } from "../Form";
 
 const SignUpPage = ({ history }) =>
-  <div>
-    <h1>SignUp</h1>
+<div>
+&nbsp;
+<Row>
+<Col size="sm-3">
+</Col>
+<Col size="sm-6">
+<div className="card">
+<div className="card-body">
+  <div className="text-center">
+    &nbsp;
+      <span><h3>Sign Up for Treat</h3></span>
     <SignUpForm history={history} />
   </div>
+  </div>
+  </div>
+  </Col>
+  <Col size="sm-3">
+</Col>
+</Row>
+  </div>
+  
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -81,25 +101,29 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+      Name
+        <Input
           value={username}
           onChange={event => this.setState(updateByPropertyName('username', event.target.value))}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        Email
+        <Input
           value={email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        Password
+        <Input
           value={passwordOne}
           onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
           type="password"
           placeholder="Password"
         />
-        <input
+        Confirm Password
+        <Input
           value={passwordTwo}
           onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
           type="password"

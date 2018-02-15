@@ -125,7 +125,7 @@ class Profile extends React.Component {
       
       
         <a href="/">&ensp;&ensp;<h3 className="text-center">Kelly Q </h3></a>
-      <h5 className="text-center">&ensp;&ensp;&ensp;View Upcoming Events</h5>
+      {/* <h5 className="text-center">&ensp;&ensp;&ensp;View Upcoming Events</h5> */}
       
       
       </Col>
@@ -219,8 +219,13 @@ class Profile extends React.Component {
               </Col>
             <Col size="md-2">
             </Col>
-
-            <Col size="md-6 sm-12">
+            </Row>
+            &nbsp;
+             <Row>
+                <Col size="md-2">
+                </Col>
+                <Col size="md-8">
+         
               <Jumbotron>
                 <h2>Upcoming Events</h2>
               </Jumbotron>
@@ -240,9 +245,13 @@ class Profile extends React.Component {
                   })}
                 </List>
               ) : (
-                  <h3>No Results to Display</h3>
+                  <h3 className="text-center">No Results to Display</h3>
                 )}
             </Col>
+            <Col size="md-2">
+            </Col>
+            
+
           </Row>
         </Container>
       </div>

@@ -7,15 +7,15 @@ position: relative;
 }
 
 .titleNameOne {
-position: absolute;
-margin-top: -290px;
-margin-left: 160px;
-}
-.titleNameTwo {
-position: absolute;
-margin-top: -230px;
-margin-left: 170px;
-}
+  position: absolute;
+  margin-top: -350px;
+  margin-left: 160px;
+  }
+  .titleNameTwo {
+  position: absolute;
+  margin-top: -290px;
+  margin-left: 170px;
+  }
 
 .card-header {
 padding: 20px;
