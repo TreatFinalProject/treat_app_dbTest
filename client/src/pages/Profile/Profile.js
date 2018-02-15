@@ -105,14 +105,14 @@ class Profile extends React.Component {
         &nbsp;
       <Container fluid>
       <Row>
-      <Col size="md-1">
-      </Col>
+      {/* <Col size="md-1">
+      </Col> */}
 
-      <Col size="md-3">
+      {/* <Col size="md-3"> */}
       
        
-        <div className="profilePic">
-        <Row>
+        {/* <div className="profilePic"> */}
+        {/* <Row>
             <Col size="md-4">
             </Col>
             <Col size="md-4">
@@ -121,18 +121,14 @@ class Profile extends React.Component {
             <Col size="md-4">
             </Col>
         </Row>
-        </div>
-      
-      
-        <a href="/">&ensp;&ensp;<h3 className="text-center">Kelly Q </h3></a>
-      {/* <h5 className="text-center">&ensp;&ensp;&ensp;View Upcoming Events</h5> */}
-      
-      
-      </Col>
-     
+        </div> */}
+
+      {/* </Col> */}
+      <Col size="md-2">
+        </Col>
          
           
-      <Col size="md-7">
+      <Col size="md-8">
               
                 <div className="card">
                   <Row>
@@ -144,9 +140,9 @@ class Profile extends React.Component {
                     <Col size="md-8">
                         <div className="card-body">
                         &nbsp;
-                          <h4>&nbsp;&nbsp;Best Friend: &ensp;Ginger </h4>
-                          <h4>&nbsp;&nbsp;Birthdate: &ensp;02/17/2015</h4>
-                          <h4>&nbsp;&nbsp;Location: &ensp;Hoboken, NJ</h4>
+                          <h4>&nbsp;&nbsp;Best Friend: &ensp;Frida </h4>
+                          <h4>&nbsp;&nbsp;Birthdate: &ensp;05/07/2017</h4>
+                          <h4>&nbsp;&nbsp;Location: &ensp;Jersey City, NJ</h4>
 
                         </div>
                     </Col>
@@ -156,10 +152,43 @@ class Profile extends React.Component {
              
             </Col>
        
-        <Col size="md-1">
+        <Col size="md-2">
         </Col>
     </Row>
     &nbsp;
+    <Row>
+                <Col size="md-2">
+                </Col>
+                <Col size="md-8">
+         
+              <Jumbotron>
+                <h2>Upcoming Events</h2>
+              </Jumbotron>
+              {this.state.events.length ? (
+                <List>
+                  {this.state.events.map(event => {
+                    return (
+                      <ListItem key={event._id}>
+                        <a href={"/events/" + event._id}>
+                          <strong>
+                            {event.eventName} hosted by {event.eventHost}
+                          </strong>
+                        </a>
+                        <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              ) : (
+                  <h3 className="text-center">No Results to Display</h3>
+                )}
+            </Col>
+            <Col size="md-2">
+            </Col>
+            
+
+          </Row>
+          &nbsp;
     <Row>
     <Col size="md-2">
     </Col>
@@ -220,39 +249,7 @@ class Profile extends React.Component {
             <Col size="md-2">
             </Col>
             </Row>
-            &nbsp;
-             <Row>
-                <Col size="md-2">
-                </Col>
-                <Col size="md-8">
-         
-              <Jumbotron>
-                <h2>Upcoming Events</h2>
-              </Jumbotron>
-              {this.state.events.length ? (
-                <List>
-                  {this.state.events.map(event => {
-                    return (
-                      <ListItem key={event._id}>
-                        <a href={"/events/" + event._id}>
-                          <strong>
-                            {event.eventName} hosted by {event.eventHost}
-                          </strong>
-                        </a>
-                        <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
-                      </ListItem>
-                    );
-                  })}
-                </List>
-              ) : (
-                  <h3 className="text-center">No Results to Display</h3>
-                )}
-            </Col>
-            <Col size="md-2">
-            </Col>
-            
-
-          </Row>
+             
         </Container>
       </div>
     );
