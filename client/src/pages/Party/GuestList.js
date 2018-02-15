@@ -65,6 +65,10 @@ class GuestList extends React.Component {
     }
   };
 
+  pageBack() {
+    window.history.back()
+  };
+
   render() {
     return (
       
@@ -73,6 +77,8 @@ class GuestList extends React.Component {
           <Row>
           <Col size="md-6">
             &nbsp;
+            <input type="button" value="Back" onClick={() => this.pageBack()} /> 
+
               <Jumbotron>
                 <h2>Add Guests</h2>
               </Jumbotron>

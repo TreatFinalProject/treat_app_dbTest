@@ -60,13 +60,18 @@ class Todo extends React.Component {
     }
   };
 
+pageBack() {
+  window.history.back()
+};
+
   render() {
     return (
-     
         <Container fluid>
           <Row>
             <Col size="md-6">
             &nbsp;
+            <input type="button" value="Back" onClick={() => this.pageBack()} /> 
+
               <Jumbotron>
                 <h2>Add a Todo</h2>
               </Jumbotron>
