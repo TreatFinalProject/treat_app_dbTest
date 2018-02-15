@@ -29,10 +29,10 @@ class Home extends React.Component {
         }
      
 
-    performSearch = (query = 'dog') => {
+    performSearch = (query = 'pet') => {
     const API = 'dbadf4601c1e3ce399dce13d570bacf17a080a81fd34dad742b62fe6959b462d';
     axios.get (
-         'https://api.unsplash.com/search/photos/?page=3&per_page=9&query=dog&client_id=' + API
+         'https://api.unsplash.com/search/photos/?page=3&per_page=9&query=pet&client_id=' + API
      )
      .then(data => {
          this.setState({ imgs:data.data.results,
@@ -156,7 +156,7 @@ class Home extends React.Component {
                         <div className="card">
                             <div className="card-header text-center">
                                 
-                            <img src={light} width="15" height="20" alt="picDog"/>&ensp;  The 4 Reasons to Throw Your Dog a Birthday Party
+                            <img src={light} width="15" height="20" alt="picDog"/>&ensp;  The 4 Reasons to Throw Your Pet a Birthday Party
                             </div>
                             &nbsp;
                             
@@ -190,7 +190,7 @@ class Home extends React.Component {
                                     <img src={check} width="12" height="12" alt="picDog"/>
                                 </Col>
                                 <Col size="md-10">
-                                    <p className="card-text"> Because one dog year is equivalent to 7 human years. </p>
+                                    <p className="card-text"> Because one pet year is equivalent to 7 human years. </p>
                                 </Col>
                                 
                             </Row>
@@ -241,8 +241,8 @@ class Home extends React.Component {
            
                 <ContainerTwo>
                 
-                <h3 className="text-center">Our community of best event planners</h3>
-                <p className="text-center"> Over a million and counting...</p>
+                <h3 className="text-center">Be your own best event planner</h3>
+                <p className="text-center"> Celebrate your best friend...</p>
                 
                         <div className="main-content">
                         &nbsp;  
