@@ -151,7 +151,8 @@ class Home extends React.Component {
                             </Row>
                     </Col>
 
-                    <Col size="xs-12 sm-6 ">
+                   
+                   <Col size="xs-12 sm-6 ">
                         <div className="card">
                             <div className="card-header text-center">
                                 
@@ -159,13 +160,72 @@ class Home extends React.Component {
                             </div>
                             &nbsp;
                             
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Because your best friend deserves a celebration!</p>
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Doggy playdates are good for both you and your pet! </p>
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Because one dog year is equivalent to 7 human years. 
-                             &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Every one of your buddy’s birthdays should be 7x as 
-                             &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;celebrated!</p>
-                             <p className="card-text">&ensp;&ensp; <img src={check} width="12" height="12" alt="picDog"/> &ensp;Because a party where sniffing butts is totally ok rules!</p>
-                                        <a href="/signup" className="btn btn-success btn-sm">Start Planning Today!</a>
+                            <div className="text-justfy">
+                            <Row>
+                                <Col size="md-1">
+                                </Col>
+                                <Col size="md-1"> 
+                                    <img src={check} width="12" height="12" alt="picDog"/>
+                                </Col>
+                                <Col size="md-10">
+                                    <p className="card-text"> Because your best friend deserves a celebration!</p>
+                                </Col>
+                                &nbsp;
+                            </Row>
+                            <Row>
+                                <Col size="md-1">
+                                </Col>
+                                <Col size="md-1"> 
+                                    <img src={check} width="12" height="12" alt="picDog"/>
+                                </Col>
+                                <Col size="md-10">
+                                    <p className="card-text"> Doggy playdates are good for both you and your pet! </p>
+                                </Col>
+                                &nbsp;
+                            </Row>
+                            <Row>
+                                <Col size="md-1">
+                                </Col>
+                                <Col size="md-1"> 
+                                    <img src={check} width="12" height="12" alt="picDog"/>
+                                </Col>
+                                <Col size="md-10">
+                                    <p className="card-text"> Because one dog year is equivalent to 7 human years. </p>
+                                </Col>
+                                
+                            </Row>
+                            <Row>
+                                <Col size="md-1">
+                                </Col>
+                                <Col size="md-1"> 
+                                   
+                                </Col>
+                                <Col size="md-10">
+                                    <p className="card-text"> Every one of your buddy’s birthdays should be 7x as celebrated!</p>
+                                </Col>
+                                &nbsp;
+                            </Row>
+                            <Row>
+                                <Col size="md-1">
+                                </Col>
+                                <Col size="md-1"> 
+                                    <img src={check} width="12" height="12" alt="picDog"/>
+                                </Col>
+                                <Col size="md-10">
+                                    <p className="card-text"> Because a party where sniffing butts is totally ok rules!</p>
+                                </Col>
+                            </Row>
+                            </div>
+                                        <Row>
+                                            <Col size="sm-3">
+                                            </Col>
+                                            <Col size="sm-3">
+                                                <a href="/signup" className="btn btn-success btn-xs round">Start Today</a>
+                                            </Col>
+                                            <Col size="sm-6">
+                                            </Col>
+                                        </Row>
+                                        &nbsp;
                             </div>
                        
                     </Col>

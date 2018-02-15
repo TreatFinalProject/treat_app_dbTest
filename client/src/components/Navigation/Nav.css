@@ -1,12 +1,12 @@
 nav.navbar.navbar-default {
-    margin-bottom: auto;
-    padding: 10px;
-    background-color: #ABD1DB;
-    border-color: #ABD1DB;
-    color: white;
-    font-size: 20px;
-  }
+  margin-bottom: auto;
+  padding: 10px;
+  background-color: #ABD1DB;
+  border-color: #ABD1DB;
+  
+  font-size: 16px;
+}
 
 a {
-  color: black;
+color: black;
 }

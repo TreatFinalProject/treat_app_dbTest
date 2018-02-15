@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import Wrapper from "../Wrapper";
+import Row from "../Row";
+import Col from "../Col";
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { auth } from '../../firebase';
+import "./index.css";
 import * as routes from '../../constants/routes';
+import { Input, FormBtn } from "../Form";
 
 const SignInPage = ({ history }) =>
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm history={history} />
-    <PasswordForgetLink />
-    <SignUpLink />
+<div>
+&nbsp;
+<Row>
+<Col size="sm-3">
+</Col>
+<Col size="sm-6">
+      <div className="card">
+        <div className="card-body">
+          <div className="text-center">
+            &nbsp;
+              <span><h3>Sign In for Treat</h3></span>
+                <SignInForm history={history} />
+                <PasswordForgetLink />
+                <SignUpLink />
+          </div>
+        </div>
+      </div>
+  </Col>
+  <Col size="sm-3">
+</Col>
+</Row>
   </div>
+  
+  
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -65,25 +87,40 @@ class SignInForm extends Component {
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
+      
+        
+        <form onSubmit={this.onSubmit}>
+       
+         
+            Email
+            <Input
+              value={email}
+            onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
+            type="text"
+            placeholder="Email Address"
+            />
+         
+     
+        &nbsp;
+        Password
+        <Input
           value={password}
           onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
           type="password"
           placeholder="Password"
         />
+       
+        
         <button disabled={isInvalid} type="submit">
           Sign In
         </button>
 
         { error && <p>{error.message}</p> }
+      
       </form>
+     
+     
+     
     );
   }
 }

@@ -1,13 +1,13 @@
 import React from 'react';
+import "./index.css";
 
 import { auth } from '../../firebase';
 
 const SignOutButton = () =>
-  <button
-    type="button"
+<a href="/home"
     onClick={auth.doSignOut}
   >
     Sign Out
-  </button>
+  </a>
 
 export default SignOutButton;
