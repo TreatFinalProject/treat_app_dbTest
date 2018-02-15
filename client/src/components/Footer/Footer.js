@@ -27,11 +27,11 @@ class Footer extends React.Component {
                               <p>Kelly Quinn 
                               &ensp;<a href="https://github.com/KellyQuinn213"><img src={github} width="26" height="26" alt="github"/></a>
                               &ensp;<a href="https://www.linkedin.com/in/kelly-quinn-692660a2/"><img src={link} width="31" height="31" alt="github"/></a>
-                              &ensp;<img src={gmail} width="29" height="29" alt="github"/></p>
+                              &ensp;<a herf="mailto:kellyquinn213@gmail.com"><img src={gmail} width="29" height="29" alt="github"/></a></p>
                               <p>Bill King 
                               &ensp;<a href="https://github.com/wpk12345"><img src={github} width="26" height="26" alt="github"/></a>
                               &ensp;<a href="https://www.linkedin.com/in/bill-king-595948109/"><img src={link} width="31" height="31" alt="github"/></a>
-                              &ensp;<img src={gmail} width="29" height="29" alt="github"/></p>
+                              &ensp;<a href="mailto:wpk12345@gmail.com"><img src={gmail} width="29" height="29" alt="github"/></a></p>
                               <p>Yubin Jamora 
                               &ensp;<a href="https://github.com/yubinjamora"><img src={github} width="26" height="26" alt="github"/></a>
                               &ensp;<a href="https://www.linkedin.com/in/yubin-jamora-410b02b5/"><img src={link} width="31" height="31" alt="github"/></a>

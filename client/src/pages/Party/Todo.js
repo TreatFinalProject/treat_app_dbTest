@@ -67,10 +67,16 @@ pageBack() {
   render() {
     return (
         <Container fluid>
-          <Row>
-            <Col size="md-6">
+        &nbsp;
+          <div>
+      
+          <button className="btn btn-info btn-xs round" value="Back" onClick={() => this.pageBack()}> Back </button> 
+        
+          </div>
+            <Row>
+              <Col size="md-6">
             &nbsp;
-            <input type="button" value="Back" onClick={() => this.pageBack()} /> 
+                   
 
               <Jumbotron>
                 <h2>Add a Todo</h2>
